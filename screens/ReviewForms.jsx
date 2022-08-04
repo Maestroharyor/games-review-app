@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
 import React from "react";
 import { Formik } from "formik";
 import { globalStyles } from "../styles/global";
-import { TextInput } from "react-native-gesture-handler";
 import * as yup from "yup";
 import Button from "../shared/Button";
 
@@ -44,7 +43,7 @@ const ReviewForms = ({ addReview, setOpenModal }) => {
 
             <TextInput
               multiline
-              minHeight={50}
+              minHeight={80}
               placeholder="Review Body"
               onChangeText={formikProps.handleChange("body")}
               value={formikProps.values.body}

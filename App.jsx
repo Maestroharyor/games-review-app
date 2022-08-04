@@ -7,7 +7,6 @@ import {
 } from "@expo-google-fonts/koho";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-// import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import Home from "./screens/Home";
 import ReviewDetails from "./screens/ReviewDetails";
@@ -15,7 +14,6 @@ import About from "./screens/About";
 import Header from "./shared/Header";
 
 const Stack = createNativeStackNavigator();
-// const Drawer = createDrawerNavigator();
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -35,7 +33,9 @@ export default function App() {
             name="Home"
             component={Home}
             options={{
-              headerTitle: () => <Header title={"Games Reviewer"} showIcon />,
+              // header: () => <Header title={"Games Reviewer"} showIcon />,
+              // headerTitle: "Home",
+              title: "Home",
               headerStyle: {
                 backgroundColor: "#ccc",
               },
@@ -50,9 +50,10 @@ export default function App() {
             name="reviewsDetails"
             component={ReviewDetails}
             options={{
-              headerTitle: () => (
-                <Header title={"Games Details"} showIcon={false} />
-              ),
+              // headerTitle: () => (
+              //   <Header title={"Games Details"} showIcon={false} />
+              // ),
+              title: "Game Review",
               headerStyle: {
                 backgroundColor: "#ccc",
               },
@@ -66,7 +67,8 @@ export default function App() {
             name="about"
             component={About}
             options={{
-              headerTitle: () => <Header title={"About this App"} />,
+              // headerTitle: () => <Header title={"About this App"} />,
+              title: "About",
               headerStyle: {
                 backgroundColor: "#f4511e",
               },

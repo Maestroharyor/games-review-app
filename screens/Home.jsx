@@ -79,30 +79,28 @@ const Home = ({ navigation }) => {
       />
       <View style={globalStyles.container}>
         <Modal visible={openModal} animationType="slide">
-          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View style={styles.modal}>
-              <MaterialIcons
-                name="close"
-                size={30}
-                style={{
-                  padding: 10,
-                  borderRadius: 10,
-                  borderWidth: 1,
-                  borderColor: "#333",
-                  borderStyle: "dashed",
-                  marginTop: 20,
-                  marginBottom: 10,
-                }}
-                onPress={() => setOpenModal(false)}
-              />
-              <View style={{ flex: 1, width: "100%" }}>
-                <ReviewForms
-                  addReview={addReview}
-                  setOpenModal={setOpenModal}
-                />
-              </View>
-            </View>
-          </TouchableWithoutFeedback>
+          {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss}> */}
+          <View style={styles.modalContent}>
+            <MaterialIcons
+              name="close"
+              size={30}
+              style={{
+                padding: 10,
+                borderRadius: 10,
+                borderWidth: 1,
+                borderColor: "#333",
+                borderStyle: "dashed",
+                marginTop: 20,
+                marginBottom: 10,
+                justifyContent: "center",
+                alignItems: "center",
+                alignSelf: "center",
+              }}
+              onPress={() => setOpenModal(false)}
+            />
+            <ReviewForms addReview={addReview} setOpenModal={setOpenModal} />
+          </View>
+          {/* </TouchableWithoutFeedback> */}
         </Modal>
         <View
           style={{
@@ -141,12 +139,6 @@ const Home = ({ navigation }) => {
             )}
           />
         </View>
-
-        <Button
-          title="About"
-          color={"#f4511e"}
-          onPress={() => navigation.navigate("about")}
-        />
       </View>
     </>
   );
@@ -155,7 +147,7 @@ const Home = ({ navigation }) => {
 export default Home;
 
 const styles = StyleSheet.create({
-  modal: {
-    alignItems: "center",
+  modalContent: {
+    flex: 1,
   },
 });
